@@ -4,7 +4,9 @@ const User = require('../models/userModels');
 
 const login = (req, res) => {
   const { username, password } = req.body;
+  
   User.findOne({ username }, (err, user) => {
+    // console.log('something',user)
     if (err) {
       res.status(403).json({ error: 'Invalid Username/Password' });
       return;
@@ -15,7 +17,8 @@ const login = (req, res) => {
     }
     user.checkPassword(password, (nonMatch, hashMatch) => {
       // This is an example of using our User.method from our model.
-      if (nonMatch !== null) {
+      console.log(nonMatch)
+      if (nonMatch) {
         res.status(422).json({ error: 'passwords dont match' });
         return;
       }
