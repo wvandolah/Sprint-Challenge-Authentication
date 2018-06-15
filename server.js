@@ -1,18 +1,18 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+// const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const routes = require('./api/routes/routes');
 
 const server = express();
 const corsOptions = {
-  // If you're moving onto the stretch problem you'll need to set this obj with the appropriate fields
-  // ensure that your client's URL/Port can achieve a Handshake
-  // then pass this object to the cors() function
+  origin: 'http://localhost:3000', // allow only the React application to connect
+  credentials: true
 };
-
-server.use(bodyParser.json());
-server.use(cors());
+// bodyParser is included in express as of 4.16.0
+// server.use(bodyParser.json());
+server.use(express.json());
+server.use(cors(corsOptions));
 
 routes(server);
 

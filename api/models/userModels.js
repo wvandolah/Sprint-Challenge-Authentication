@@ -44,7 +44,7 @@ UserSchema.methods.checkPassword = function(plainTextPW, callBack) {
   
   bcrypt.compare(plainTextPW, this.password)
     .then(checkPw => {
-      console.log(checkPw)
+      
       callBack(!checkPw,checkPw)
     })
     .catch(err => {

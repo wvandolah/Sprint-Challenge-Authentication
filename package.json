@@ -18,13 +18,17 @@
   },
   "homepage": "https://github.com/LambdaSchool/Sprint-Challenge-Authentication#readme",
   "dependencies": {
+    "@material-ui/core": "^1.2.1",
+    "axios": "^0.18.0",
     "bcrypt": "^2.0.1",
-    "body-parser": "^1.18.2",
     "cors": "^2.8.4",
+    "emotion": "^9.2.3",
     "express": "^4.16.2",
     "jsonwebtoken": "^8.1.0",
     "mongoose": "^4.13.7",
-    "node-fetch": "^1.7.3"
+    "node-fetch": "^1.7.3",
+    "react-emotion": "^9.2.3",
+    "react-router-dom": "^4.3.1"
   },
   "devDependencies": {
     "nodemon": "^1.17.5"
